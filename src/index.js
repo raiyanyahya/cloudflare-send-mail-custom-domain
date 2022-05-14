@@ -26,7 +26,7 @@ async function handleRequest(request) {
           },
           "subject": "You have a new notification",
           "content": [{
-              "type": "text/plain",
+              "type": "application/html",
               "value": readJson()
           }],
       }),
@@ -54,7 +54,7 @@ async function handleRequest(request) {
 
 
 function readJson () {
-  fetch('./email.html').then((response) => response.text())
+  fetch('email.html').then((response) => response.text())
   .then(data => {
       return data;
   }).catch(err => {
