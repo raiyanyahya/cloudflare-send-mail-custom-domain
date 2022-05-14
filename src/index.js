@@ -60,5 +60,5 @@ function readJson () {
     // Work with JSON data here
     console.log(data);
   }).catch(err => {
-    // Do something for an error here
+    console-log(err)
   });}
