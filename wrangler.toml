@@ -1,0 +1,8 @@
+name = "cloudflare-send-mail-custom-domain"
+main = "src/index.js"
+compatibility_date = "2022-05-14"
+minify = true
+
+[env.production]
+workers_dev = false
+route = "https://upskaler.com/"
