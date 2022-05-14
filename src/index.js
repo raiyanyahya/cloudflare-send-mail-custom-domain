@@ -18,13 +18,13 @@ async function handleRequest(request) {
                       "name": "Test Recipient"}]}
           ],
           "from": {
-              "email": "sender@upskaler.com",
+              "email": "raiyan@upskaler.com",
               "name": "Test Sender",
           },
           "subject": "Test Subject",
           "content": [{
               "type": "text/plain",
-              "value": "Test message content\n\n" + content,
+              "value": "mail recieved"
           }],
       }),
   });
