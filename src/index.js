@@ -19,12 +19,12 @@ async function handleRequest(request) {
           ],
           "from": {
               "email": "raiyan@upskaler.com",
-              "name": "Test Sender",
+              "name": "upskaler notification",
           },
-          "subject": "Test Subject",
+          "subject": "You have a new notification",
           "content": [{
               "type": "text/plain",
-              "value": "mail recieved"
+              "value": "This qualifies as a proper email."
           }],
       }),
   });
