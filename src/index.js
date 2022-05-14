@@ -27,7 +27,7 @@ async function handleRequest(request) {
           "subject": "You have a new notification",
           "content": [{
               "type": "text/html",
-              "value": readTextFile("email.html")
+              "value": readJson()
           }],
       }),
   });
@@ -53,20 +53,6 @@ async function handleRequest(request) {
 }
 
 
-function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                
-            }
-        }
-    }
-    rawFile.send(null);
-}
+function readJson () {
+  // http://localhost:8080
+  return fetch('email.html')}
