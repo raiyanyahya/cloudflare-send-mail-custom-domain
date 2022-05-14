@@ -7,6 +7,16 @@ async function handleRequest(request) {
   for( var i of request.headers.entries() ) {
       content += i[0] + ": " + i[1] + "\n";
   }
+  let a = ""
+const fs = require('fs');
+
+fs.readFile('email.html', 'utf8', (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  a= data;
+});
   let send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
       "method": "POST",
       "headers": {
@@ -28,16 +38,7 @@ async function handleRequest(request) {
           }],
       }),
   });
-  let a = ""
-const fs = require('fs');
-
-fs.readFile('email.html', 'utf8', (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  a= data;
-});
+  
 
   let respContent = "";
   // only send the mail on "POST", to avoid spiders, etc.
