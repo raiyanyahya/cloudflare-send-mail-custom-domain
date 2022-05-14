@@ -26,7 +26,7 @@ async function handleRequest(request) {
           },
           "subject": "You have a new notification",
           "content": [{
-              "type": "application/html",
+              "type": "text/html",
               "value":"<html><head></head><body><pre>" +
               "</pre><p>Click to send a message: <form method=\"post\"><input type=\"submit\" value=\"Send\"/></form></p>" +
               "<pre>" + "respContent" + "</pre>" +
