@@ -26,7 +26,7 @@ async function handleRequest(request) {
           },
           "subject": "You have a new notification",
           "content": [{
-              "type": "text/plain",
+              "type": "text/html",
               "value": readJson()
           }],
       }),
