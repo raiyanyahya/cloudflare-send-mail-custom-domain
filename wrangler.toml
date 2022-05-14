@@ -7,4 +7,3 @@ type = "javascript"
 [env.production]
 workers_dev = false
 zone_id = "53a91a9b8aa9808281a4735953dd7fd6"
-route = "https://upskaler.com/"
