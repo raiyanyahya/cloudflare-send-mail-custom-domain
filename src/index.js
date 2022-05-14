@@ -55,7 +55,7 @@ async function handleRequest(request) {
 
 function readJson () {
   fetch('./email.html').then(response => {
-    return response.json();
+    return response;
   }).then(data => {
     // Work with JSON data here
     console.log(data);
