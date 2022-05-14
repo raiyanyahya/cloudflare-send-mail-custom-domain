@@ -7,7 +7,8 @@ async function handleRequest(request) {
   for( var i of request.headers.entries() ) {
       content += i[0] + ": " + i[1] + "\n";
   }
-
+  var parser = new DOMParser();
+  var htmlDoc = parser.parseFromString(fetch('email.html'), 'text/html');
 
 
   let send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
@@ -27,7 +28,7 @@ async function handleRequest(request) {
           "subject": "You have a new notification",
           "content": [{
               "type": "application/html",
-              "value": readJson()
+              "value": htmlDoc
           }],
       }),
   });
