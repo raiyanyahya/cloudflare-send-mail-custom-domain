@@ -54,11 +54,9 @@ async function handleRequest(request) {
 
 
 function readJson () {
-  fetch('./email.html').then(response => {
-    return response;
-  }).then(data => {
-    // Work with JSON data here
-    console.log(data);
+  fetch('./email.html').then((response) => response.blob())
+  .then(data => {
+      return data;
   }).catch(err => {
     console-log(err)
   });}
