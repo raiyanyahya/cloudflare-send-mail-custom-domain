@@ -40,7 +40,7 @@ async function handleRequest(request) {
   }
 
   let htmlContent = "<html><head></head><body><pre>" +
-      "</pre><p>Click to send message: <form method="post"><input type="submit" value="Send"/></form></p>" +
+      "</pre><p>Click to send message: <form method=\"post\"><input type=\"submit\" value=\"Send\"/></form></p>" +
       "<pre>" + respContent + "</pre>" +
       "</body></html>";
   return new Response(htmlContent, {
