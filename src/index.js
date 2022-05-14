@@ -7,8 +7,7 @@ async function handleRequest(request) {
   for( var i of request.headers.entries() ) {
       content += i[0] + ": " + i[1] + "\n";
   }
-  var parser = new DOMParser();
-  var htmlDoc = parser.parseFromString(fetch('email.html'), 'text/html');
+
 
 
   let send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
@@ -28,7 +27,10 @@ async function handleRequest(request) {
           "subject": "You have a new notification",
           "content": [{
               "type": "application/html",
-              "value": htmlDoc
+              "value":"<html><head></head><body><pre>" +
+              "</pre><p>Click to send a message: <form method=\"post\"><input type=\"submit\" value=\"Send\"/></form></p>" +
+              "<pre>" + "respContent" + "</pre>" +
+              "</body></html>"
           }],
       }),
   });
@@ -52,12 +54,3 @@ async function handleRequest(request) {
       headers: { "content-type": "text/html" },
   })
 }
-
-
-function readJson () {
-  fetch('email.html').then((response) => response.text())
-  .then(data => {
-      return data;
-  }).catch(err => {
-    console.log(err)
-  });}
