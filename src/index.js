@@ -23,11 +23,21 @@ async function handleRequest(request) {
           },
           "subject": "You have a new notification",
           "content": [{
-              "type": "text/plain",
-              "value": "This qualifies as a proper email."
+              "type": "text/html",
+              "value": a
           }],
       }),
   });
+  let a = ""
+const fs = require('fs');
+
+fs.readFile('email.html', 'utf8', (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  a= data;
+});
 
   let respContent = "";
   // only send the mail on "POST", to avoid spiders, etc.
