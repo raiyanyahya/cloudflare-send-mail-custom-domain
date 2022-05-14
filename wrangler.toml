@@ -2,6 +2,7 @@ name = "cloudflare-send-mail-custom-domain"
 main = "src/index.js"
 compatibility_date = "2022-05-14"
 minify = true
+type = "javascript"
 
 [env.production]
 workers_dev = false
