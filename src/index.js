@@ -7,16 +7,9 @@ async function handleRequest(request) {
   for( var i of request.headers.entries() ) {
       content += i[0] + ": " + i[1] + "\n";
   }
-  let a = ""
-const fs = require('fs');
 
-fs.readFile('email.html', 'utf8', (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  a= data;
-});
+
+
   let send_request = new Request("https://api.mailchannels.net/tx/v1/send", {
       "method": "POST",
       "headers": {
@@ -34,7 +27,7 @@ fs.readFile('email.html', 'utf8', (err, data) => {
           "subject": "You have a new notification",
           "content": [{
               "type": "text/html",
-              "value": a
+              "value": readTextFile("email.html")
           }],
       }),
   });
@@ -57,4 +50,23 @@ fs.readFile('email.html', 'utf8', (err, data) => {
   return new Response(htmlContent, {
       headers: { "content-type": "text/html" },
   })
+}
+
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                
+            }
+        }
+    }
+    rawFile.send(null);
 }
