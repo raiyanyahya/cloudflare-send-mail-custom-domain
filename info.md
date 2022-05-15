@@ -8,6 +8,7 @@ The example code that MailChannels supplied wasn't working so I fixed it here to
 2. Update the code below with your email addresses
 3. Create worker, paste code, save and deploy and test
 
+note:  multiple recrods in SPF record like this "v=spf1 include:_spf.google.com include:otherdomain.com -all"
 Follow [Adam Sculthorpe](https://twitter.com/AdamSculthorpe) on Twitter if you have questions or found this useful.
 
 ```

@@ -14,7 +14,7 @@ async function handleRequest(request) {
       },
       "body": JSON.stringify({
           "personalizations": [
-              { "to": [ {"email": "raiyanyahyadeveloper@gmail.com",
+              { "to": [ {"email": "raiyan.xaverian@gmail.com",
                       "name": "Raiyan Yahya"}]}
           ],
           "from": {
